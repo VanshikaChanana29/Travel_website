@@ -3,7 +3,7 @@ const router = express.Router({ mergeParams: true });
 const User = require("../models/user.js");
 const wrapAsync = require("../utils/wrapAsync");
 const passport = require("passport");
-const { saveRedirectUrl } = require("../middleware.js");
+// const { saveRedirectUrl } = require("../middleware.js");
 const userController = require("../controllers/users.js");
 router.get("/signup", userController.renderNewForm);
 
@@ -13,7 +13,7 @@ router.get("/login", userController.renderLoginForm);
 
 router.post(
   "/login",
-  saveRedirectUrl,
+  // saveRedirectUrl,
   passport.authenticate("local", {
     failureRedirect: "/login",
     failureFlash: true,
